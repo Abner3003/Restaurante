@@ -6,10 +6,12 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
-  menus.getMenus().then(results);
-  res.render('index', {
-    title: 'Teste2',
-    menus: results
+  menus.getMenus().then(results => {
+    res.render('index', {
+      title: 'Teste2',
+      menus: results,
+      isHome: true
+    });
   });
 });
 
